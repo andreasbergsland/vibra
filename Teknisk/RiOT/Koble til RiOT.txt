@@ -1,0 +1,36 @@
+riot sensor Bitolino IRCAM
+
+1. Sett wi-fi til 192.168.1.100 (preset ligger i lista: riot)
+x = azimut når sensoren ligger flatt
+
+KONFIGURERE:
+For å konfigurere, trykk inn "mode" knappen for å starte som access point (AP) mens den er av,  så hold inne flere sekunder mens du skrur den på. Den skal lyse blått. Koble til Wi-fi: RIOT-#### (må være tall)
+Gå inn på 192.168.1.1 for å konfigurere.
+
+Når de konfigureres for første gang må ID og port stilles inn, f.eks.
+ID = 1, port 8001
+ID = 2, port 8002
+ID = 3, port 8003, osv.
+
+TP-link ruteren skal være satt opp korrekt, sånn at RIoT kan koble seg til. Når den sende vil den lyse blått (vibrerende lys).
+
+OSC-beskjeder starter med ID til sensor (8003 = ID 3)
+/3/raw 0.098389 0.012695 -1.011475 -0.001648 -0.002136 0.001526 0.031128 0.139587 -0.297302 27.625 0. 0. 0. 0. -0.020213 0.870447 0.490621 0.0465 58.835217 -5.784365 179.399414 66.927574
+
+Verdiene er:
+Accel: x, y, z (floats)
+Gyro: x, y, z
+Magnetometer: x, y, z
+Quaternions: x, y, z, w
+Euler: x, y, z
+Button on board
+Button external
+Analogue in: 1 & 2
+Sampling period: default 10Hz (usikkert hvordan man modifiserer denne)
+
+
+Evt. still inn sensor sampling rate, utgangsinnstillingen er kun 5Hz, men de kan gå helt opp til 200Hz.
+
+Utfordring: Hvordan bruke RiOT og NGIMU samtidig?
+Kan RiOTene konfigureres sånn at de kan kjøres over VIBRA ruter?
+Eller kan to rutere kjøres samtidig?

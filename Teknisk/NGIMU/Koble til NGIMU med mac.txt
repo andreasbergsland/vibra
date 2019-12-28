@@ -1,0 +1,5 @@
+Koble til NGIMU med mac
+
+- Sett på strømmen på vibra-ruter.
+- Koble til trådløst når ruteren dukker opp i lista over tilgjengelige wi-fi nettverk (vibra.speed)
+- Åpne i max, f.eks. NGIMU-test.maxpat, tast inn egen IP-adresse

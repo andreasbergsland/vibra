@@ -1,0 +1,16 @@
+Test av ulike sensorer for å spore danserbevegelser
+
+Opptak av sensordata kan f.eks. skje i MuBu. Det betinger at alle sensordata hentes inn i Max.
+
+De ulike sensorene har ulik responstid. Noe skyldes sensorenes funksjon mens andre skyldes overføringen av data.
+
+Dette kan utlignes ved at man forsinker de raskeste så de er synkronisert med den langsomste. 
+
+Et større problem kan være at forsinkelsen varierer, noe som vil gjøre det tidsmessige forholdet mellom bevegelse og lydlig/visuell respons uklar.
+
+Imidlertid vil de typene sensorer også ha behov for ulik responstid. Posisjon og rotasjon krever f.eks. ikke så kjapp respons som aktivitet og utløsere. 
+
+Man kan evt. også bruke Qualisys/Optitrack som referanse for de ulike sensorene. Det er kanskje enda bedre hvis man får til å synke alt opp mot et videospor. Kan dette f.eks. gjøres med OBS?
+
+
+Mulig å lage en standalone i Max med video og data?

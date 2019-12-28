@@ -1,0 +1,5 @@
+Koble til NGIMUer fra Mac
+
+Ruteren heter vibra.speed og dukker opp i lista over wi-fi. 
+
+

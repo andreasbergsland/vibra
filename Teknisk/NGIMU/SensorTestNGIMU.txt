@@ -1,0 +1,53 @@
+Tre scenario:
+
+1. På ryggen
+Festes på tvers (rotasjon rundt y-aksen)
+
+2. Objekt - utsett. Radioer.
+
+3. Håndledd
+Ved rulling blir det problemer, ellers fungerer kompensasjonsalgoritmen (+ eller - 360) når man hopper 360 grader opp eller ned.
+
+4. Fot/bein
+Settes på på langs.
+Pitch reagerer ikke på sidebevegelse (for ut til siden)
+Roll fungerer greit i alle retninger men gir problemer med rulling.
+Ett alternativ er å bare bruke pitch og å la -90 være rett ned, og 90 være rett opp. MEn da vil det være risiko for ustabilitet mellom +-85-90.
+
+Ved rulling blir det problemer uansett.
+
+
+Andre observasjoner:
+Pitch verdier over ca. abs(85) grader gir store problemer med trackinga (skyldes Gimbal lock)
+MEN: Pitch verdien i seg selv er veldig robust.
+
+Ting å huske på:
+
+Wi-fi tilkobling til internett (også via min mac når den er koblet til Sigurd sin) ser ut til å gå i veien for kommunikasjonen mellom konfigurasjonsprogrammet på Sigurd sin PC
+
+Quaternions:
+w, x, y, z - tilsvarer: a + bi + cj + dk, der a er en skalar og i,j,k er en 3D-vektor
+
+Observasjoner: 
+x = y = 0 når sensoren ligger helt flatt (kun rotasjon rundt z-aksen)
+w = z = +/- 0.707 (rota av 2) når sensoren ligger flatt og y peker mot nord
+Når sensoren ligger flatt («på rygg») og dreies 90 grader til venstre eller høyre, vil to verdier ligge rundt 0, den andre rundt +1 eller -1
+Én hel rotasjon rundt z-aksen gir forskjellige w og z verdier: Nord kan være w=z= 0.707 eller -0.707
+«Omvendt-regelen»: n180 graders rotasjon gjør at w og z går fra w=z til w=-z
+Dette gjelder også når sensoren ligger flatt «på magen»
+
+To av quaternionene, og da enten x & y eller w & z, vil alltid være = 0 når sensoren ligger flatt, enten på «rygg» (x&y)  eller «mage» (w &z)
+
+Sensor på tvers:
+Når sensoren står på tvers, så gjelder «omvendt-regelen» for x og y, altså da går man fra x=y til x=-y
+Med litt triksing med tall ((x-y)^2)*(x-y)/abs(x-y) kan man sette en retning til å være nullpunktet, mens motsatt retning da blir maksimal forskjellig.
+Man får da også en retnings forskjell mellom høyre og venstre (øker/minker). Imidlertid vil dette snu seg etter en hel omdreining sånn at i stedet for høyre=øker/venstre=minker blir høyre=minker og venstre = øker
+Dette har imidlertid en nædvendig konsekvens: at dreining fra motsatt (180) til rett blir lik uansett høyre og venstre
+
+Magnitudes
+Tre verdier:
+indeks 0: Råverdier (?) grader/sek - mellom 0 og flere 1000
+indeks 1: Rundt 1. Ikke spesielt god korrespondanse med bevegelse
+
+
+

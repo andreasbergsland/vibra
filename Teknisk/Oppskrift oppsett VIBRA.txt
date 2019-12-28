@@ -1,0 +1,40 @@
+Oppskrift VIBRA:
+
+Hva må tas med:
+- Lydkort med strøm og USB-kabler.
+- Sensorer: 4 x Myo + 3 x NGIMU + (evt. MC+sensorbox+skjerm+tastatur+mus)
+- USB-hubber
+- Audiokabler: Dual stereo 3/4'' jack _> minijack, Dual stereo jack begge ender, dual stereo jack -> dual stereo phono
+- Ethernet-kabel med Thunderbolt-adapter
+- Sportstape (til NGIMU-sensor)
+- 4 x USB-kabler til å lade sensorer
+- Trådløsruter med strømadapter
+- Kondensatormikrofon til å ta opp romlyd/samtale
+- Mac-lader
+- Lader og ladekabler til NGIMU-sensorer
+
+Tilkobling Myo.
+
+Sigurd kobler til 3 armbånd på sin maskin, jeg kobler til ett.
+- Koble til trådløs hub (VIBRA.speed)
+
+- Sett IP på min maskin til statisk IP 192.168.1.2, subnet 255.255.255.0
+- Skru av WiFi
+
+For Max:
+* Åpne NGIMU-test
+* Skriv inn IP på min maskin til statisk IP 192.168.1.2, trykk enter
+* Velg riktig port for udpreceive - vanligvis 8034, 8035, 8036 eller 8037
+* Av og til er det problemer med tilkoblingen. Restarting av Max kan hjelpe.
+
+
+For Myo Mapper:
+- Start Myo Mapper
+- Velg port 5434 med IP 192.168.1.37 på OSC to Main. Selected Myo er sannsynligvis 1
+- Send beskjed /vibra/connect 192.168.1.2 54321 til Sigurd sin maskin: 192.168.1.37 32000
+- For filtrerte absolutte EMG-data: Sjekk i Myo mapper, Features at det er huket av for Scaled/Absolute/Moving average, velg buffer size ca. 15. OSC adressen for dette er /myo1/emg/scaled/abs/mavg. Gir en liste på 8 verdier
+
+
+- Passord til vibra.speed: NGIMU_hub (ligger på keychain). Dette passordet må tastes inn på annen maskin
+
+

@@ -1,0 +1,5 @@
+MTF Performance notes:
+
+Lilian: Myo 1 + NGIMU 34
+
+Kirsi: Myo 2 + NGIMU 36
