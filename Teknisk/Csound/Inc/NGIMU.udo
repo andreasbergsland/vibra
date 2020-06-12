@@ -1,4 +1,5 @@
 /*
+**************************************************************
 UDO to listen to OSC streams from NGIMU sensors
 
 Inputs: 
@@ -16,6 +17,9 @@ Inputs:
 
 TODO:
 - Could print other messages outside the listed addresses
+
+Credits: Andreas Bergsland, 2020, andreas.bergsland@ntnu.no
+**************************************************************
 */
 
 	opcode	NGIMU, k[]k[]k[]k[]k[]kk, Siik[]O
